@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hype Coffee — Menu</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --panel: #171717;
+      --accent: #c08b48;
+      --text: #f5f2ec;
+      --muted: #b3aca1;
+      --card: #1f1f1f;
+      --glow: rgba(192, 139, 72, 0.25);
+      --font-display: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+      --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(192,139,72,0.08), transparent 35%),
+                  radial-gradient(circle at 80% 10%, rgba(192,139,72,0.1), transparent 35%),
+                  var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(15,15,15,0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      z-index: 10;
+    }
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge {
+      background: linear-gradient(120deg, #c08b48, #f2c07c);
+      color: #0f0f0f;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 64px 20px 36px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 6vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 16px;
+    }
+    .hero p { color: var(--muted); margin: 0 0 20px; }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: linear-gradient(120deg, #c08b48, #f2c07c);
+      color: #0f0f0f;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 30px var(--glow);
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    }
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+    .section h2 {
+      font-family: var(--font-display);
+      margin: 0 0 18px;
+      letter-spacing: 0.04em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(192,139,72,0.7);
+      box-shadow: 0 10px 30px var(--glow);
+    }
+    .card h3 { margin: 0; font-size: 18px; }
+    .meta { display: flex; justify-content: space-between; align-items: center; }
+    .tag { padding: 6px 10px; border-radius: 10px; background: rgba(192,139,72,0.15); color: var(--accent); font-weight: 700; font-size: 12px; }
+    .price { font-weight: 800; color: var(--text); }
+    .desc { margin: 0; color: var(--muted); font-size: 14px; }
+    .footer {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+      color: var(--muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <span class="badge">Hype Coffee</span>
+        <span>Menu Digital</span>
+      </div>
+      <a class="cta" href="#menu">Ver cardápio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Seu café de assinatura, agora em um menu rápido e hype.</h1>
+        <p>Escolha bebidas autorais, sobremesas frescas e acompanhe o preparo pelo barista. Peça no balcão ou direto pelo QR.</p>
+        <a class="cta" href="#menu">Explorar cardápio</a>
+      </div>
+      <div class="panel">
+        <h3>Mais pedidos hoje</h3>
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="card">
+            <div class="meta">
+              <h3>Cold Brew Caramelo</h3><span class="price">R$16</span>
+            </div>
+            <p class="desc">24h extração a frio, caramelo salgado, final cítrico.</p>
+          </div>
+          <div class="card">
+            <div class="meta">
+              <h3>Flat White Baunilha</h3><span class="price">R$14</span>
+            </div>
+            <p class="desc">Blend house, microfoam sedoso e xarope de baunilha.</p>
+          </div>
+          <div class="card">
+            <div class="meta">
+              <h3>Affogato Nitro</h3><span class="price">R$18</span>
+            </div>
+            <p class="desc">Espresso duplo sobre gelato de creme, toque de nitro.</p>
+          </div>
+          <div class="card">
+            <div class="meta">
+              <h3>Cookie Dark</h3><span class="price">R$9</span>
+            </div>
+            <p class="desc">70% cacau, flor de sal, crosta brilhante.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <h2>Bebidas quentes</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="meta"><h3>Espresso Duplo</h3><span class="price">R$8</span></div>
+          <p class="desc">Extração de 18–22s, corpo denso e doçura natural.</p>
+        </div>
+        <div class="card">
+          <div class="meta"><h3>Latte Hype</h3><span class="price">R$12</span></div>
+          <p class="desc">Leite vaporizado cremoso, arte latte e xarope de avelã.</p>
+        </div>
+        <div class="card">
+          <div class="meta"><h3>Mocha Noir</h3><span class="price">R$14</span></div>
+          <p class="desc">Ganache de cacau 54%, raspas de laranja e chantilly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Gelados & especiais</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="meta"><h3>Cold Brew Tônica</h3><span class="price">R$16</span></div>
+          <p class="desc">Tônica artesanal, redução de cítricos e cold brew 24h.</p>
+        </div>
+        <div class="card">
+          <div class="meta"><h3>Matcha Collins</h3><span class="price">R$18</span></div>
+          <p class="desc">Matcha japonês batido, espuma de limão e hortelã.</p>
+        </div>
+        <div class="card">
+          <div class="meta"><h3>Frappé Chai</h3><span class="price">R$17</span></div>
+          <p class="desc">Chai masala, gelo triturado, mel e toque de noz-moscada.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Comidinhas</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="meta"><h3>Toast Avocado</h3><span class="price">R$15</span></div>
+          <p class="desc">Sourdough, avocado temperado, picles de cebola roxa.</p>
+        </div>
+        <div class="card">
+          <div class="meta"><h3>Cheesecake Frutas Vermelhas</h3><span class="price">R$14</span></div>
+          <p class="desc">Base crocante, coulis de frutas e final ácido equilibrado.</p>
+        </div>
+        <div class="card">
+          <div class="meta"><h3>Brownie Walnut</h3><span class="price">R$10</span></div>
+          <p class="desc">Miolo cremoso, nozes tostadas e toque de café.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Hype Coffee · Rua do Espresso, 123 · Aberto 7h–20h</span>
+    <span>Peça no balcão ou via QR nas mesas</span>
+  </footer>
+</body>
+</html>
